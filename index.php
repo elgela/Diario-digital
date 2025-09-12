@@ -3,7 +3,7 @@
 /**
  * Esta pagina PHP muestra el home de noticias cargadas dinamicamente.
 
- * Utiliza el arreglo $noticias compartido simulando registros que saldrian de una Base de Datos
+ * Utiliza el arreglo $noticias compartido simulando registros que saldrian de una Base de Datos.
  */
 
 require_once 'db_fake.php';
