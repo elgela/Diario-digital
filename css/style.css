@@ -1,0 +1,32 @@
+.card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    --bs-card-border-color: none;
+    border-bottom: .0625rem solid #bdbdbd;
+}
+
+.card-img-top {
+    padding: 30px;
+    margin: auto;
+    height: auto;
+}
+
+.card-body {
+    margin: auto;
+}
+
+.nav-link {
+    position: absolute;
+    background-color: aquamarine;
+}
+
+.container-fluid,
+.d-flex {
+    background-color: aqua;
+    text-align: center;
+}
+
+.container-fluid {
+    height: 70px;
+}
