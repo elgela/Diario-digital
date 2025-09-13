@@ -1,44 +1,47 @@
 <?php
-require_once 'db-fake.php';
+require_once "db_fake.php";
 
 function showNoticias() {
-        require_once './templates/header.php';
-    ?>
+    require_once "templates/header.php";
+?>
     <!-- main section -->
     <main class="container mt-5">
         <section class="noticias">
 
             <!-- noticias -->
-            <?php foreach ($noticias as $key => $noticia) { ?>
+            <?php
+            $noticias = getNoticias();
+            foreach ($noticias as $index => $noticia) :
+            ?>
                 <div class="card">
-                    <a href="noticias.php?id=<?= $key ?>"><img src="<?= $noticia->imagen ?>" class="card-img-top" alt="..."></a>
+                    <img src="<?php echo $noticia->imagen ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="noticias.php?id=<?= $key ?>">
-                            <h5 class="card-title"><?= $noticia->titulo ?></h5>
-                        </a>
-                        <p class="card-text"><?= $noticia->subtitulo ?></p>
-                        <a href="noticias.php?id=<?= $key ?>" class="btn btn-outline-primary">Leer más</a>
+                        <h5 class="card-title"><?php echo "$noticia->titulo" ?></h5>
+                        <p class="card-text"><?php echo $noticia->contenido ?></p>
+                        <a href="noticia/<?php echo $index ?>" class="btn btn-outline-primary">Leer más</a>
                     </div>
                 </div>
-            <?php } ?>
+            <?php endforeach ?>
 
         </section>
     </main>
-    <?php
-    require_once 'templates/footer.php';
+<?php
+    require_once "templates/footer.php";
 }
 
-function showNoticiasById($id) {
-    require_once 'templates/header.php';
-    $noticia = getNoticiasById($id);
-    ?>
+function showNoticiaById($id){
+    require_once "templates/header.php";
+    // utiliza el arreglo $_GET para tomar el parametro que viene desde la url (noticias.php?id=<int>)
+    // faltarìa agregar una verificación para controlar si existe la noticia
+    $noticia = getNoticiaById($id);
+?>
     <main class="container mt-5">
-    <section class="noticia">
-      <h1 class="mb-5"><?php echo $noticia->titulo ?></h1>
-      <img class="noticia-image" src="<?php echo $noticia->imagen ?>" alt="...">
-      <p class="lead mt-3"><?php echo $noticia->contenido ?></p>
-    </section>
-  </main>
-  <?php
+        <section class="noticia">
+            <h1 class="mb-5"><?php echo $noticia->titulo ?></h1>
+            <img class="noticia-image" src="<?php echo $noticia->imagen ?>" alt="...">
+            <p class="lead mt-3"><?php echo $noticia->contenido ?></p>
+        </section>
+    </main>
+<?php
     require_once "templates/footer.php";
 }

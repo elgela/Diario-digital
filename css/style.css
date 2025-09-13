@@ -1,32 +1,21 @@
-.card {
-    width: 100%;
+.noticias {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    --bs-card-border-color: none;
-    border-bottom: .0625rem solid #bdbdbd;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-gap: 25px;
 }
 
 .card-img-top {
-    padding: 30px;
-    margin: auto;
-    height: auto;
+    max-height: 200px;
+    object-fit: cover;
 }
 
-.card-body {
-    margin: auto;
-}
-
-.nav-link {
-    position: absolute;
-    background-color: aquamarine;
+.noticia-image {
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .container-fluid,
-.d-flex {
-    background-color: aqua;
-    text-align: center;
-}
-
-.container-fluid {
-    height: 70px;
+footer {
+    background-color: aquamarine;
 }

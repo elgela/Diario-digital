@@ -25,19 +25,19 @@ switch ($params[0]) {
         break;
     case "noticia":
         if(isset($params[1])){
-            // showNoticiaById($params[1]);
+            showNoticiaById($params[1]);
         }else{
-            // showNoticias();
+            showNoticias();
         }
         break;
     case "about":
         echo "En construcción";
+        break;
+    case "staff":
+        echo 'En construcción';
         break;
     default:
         echo "Error 404";
         break;
 }
 
-function showNoticias() {
-
-}
