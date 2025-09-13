@@ -1,7 +1,8 @@
 <?php
 require_once "db_fake.php";
 
-function showNoticias() {
+function showNoticias()
+{
     require_once "templates/header.php";
 ?>
     <!-- main section -->
@@ -29,7 +30,8 @@ function showNoticias() {
     require_once "templates/footer.php";
 }
 
-function showNoticiaById($id){
+function showNoticiaById($id)
+{
     require_once "templates/header.php";
     // utiliza el arreglo $_GET para tomar el parametro que viene desde la url (noticias.php?id=<int>)
     // faltarìa agregar una verificación para controlar si existe la noticia
@@ -44,4 +46,51 @@ function showNoticiaById($id){
     </main>
 <?php
     require_once "templates/footer.php";
+}
+
+function showStaff()
+{
+    require_once 'templates/header.php';
+?>
+    <!-- main section -->
+    <main class="container mt-5">
+        <section class="staff">
+
+            <h1>Staff del diario</h1>
+
+            <ul>
+                <li><a href="staff.php?name=marcelo">Marcelo Gelato</a> </li>
+                <li><a href="staff.php?name=abby">Abby</a></li>
+                <li><a href="staff.php?name=luli">Luli</a></li>
+            </ul>
+
+            <?php if (!empty($staffName)) { ?>
+                <div>
+                    <h2><?= $staff[$staffName] ?></h2>
+                    <h3>Rol: Director</h3>
+                </div>
+            <?php  } ?>
+
+        </section>
+    </main>
+<?php
+    require_once 'templates/footer.php';
+}
+
+function showStaffById($id)
+{
+    require_once 'templates/header.php';
+    $staff = getStaffById($id);
+?>
+    <main class="container mt-5">
+        <section class="staff">
+
+        </section>
+    </main>
+<?php
+    require_once 'templates/footer.php';
+}
+
+function getStaffById($id) {
+    
 }
