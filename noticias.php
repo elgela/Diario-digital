@@ -1,30 +1,8 @@
 <?php
+require_once 'db-fake.php';
 
-/**
- * Esta pagina PHP muestra el home de noticias cargadas dinamicamente.
-
- * Utiliza el arreglo $noticias compartido simulando registros que saldrian de una Base de Datos.
- */
-
-require_once 'db_fake.php';
-
-$fecha = new DateTime();
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Diario Digital</title>
-</head>
-
-<body>
-    <?php
-    require_once './templates/header.php';
+function showNoticias() {
+        require_once './templates/header.php';
     ?>
     <!-- main section -->
     <main class="container mt-5">
@@ -46,11 +24,21 @@ $fecha = new DateTime();
 
         </section>
     </main>
-    <!-- footer section -->
     <?php
-    require_once './templates/footer.php'
+    require_once 'templates/footer.php';
+}
+
+function showNoticiasById($id) {
+    require_once 'templates/header.php';
+    $noticia = getNoticiasById($id);
     ?>
-
-</body>
-
-</html>
+    <main class="container mt-5">
+    <section class="noticia">
+      <h1 class="mb-5"><?php echo $noticia->titulo ?></h1>
+      <img class="noticia-image" src="<?php echo $noticia->imagen ?>" alt="...">
+      <p class="lead mt-3"><?php echo $noticia->contenido ?></p>
+    </section>
+  </main>
+  <?php
+    require_once "templates/footer.php";
+}

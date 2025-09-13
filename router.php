@@ -21,7 +21,7 @@ $params = explode("/",$action);
 
 switch ($params[0]) {
     case "home":
-        // showNoticias();
+        showNoticias();
         break;
     case "noticia":
         if(isset($params[1])){
@@ -36,4 +36,8 @@ switch ($params[0]) {
     default:
         echo "Error 404";
         break;
+}
+
+function showNoticias() {
+
 }
