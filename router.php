@@ -34,7 +34,12 @@ switch ($params[0]) {
         echo "En construcción";
         break;
     case "staff":
-        echo 'En construcción';
+        if (isset($params[1])) {
+            showStaffById($params[1]);
+        } else {
+            showStaff();
+        }
+        // echo 'En construcción';
         break;
     default:
         echo "Error 404";
