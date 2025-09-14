@@ -1,8 +1,7 @@
 <?php
 require_once "db_fake.php";
 
-function showNoticias()
-{
+function showNoticias() {
     require_once "templates/header.php";
 ?>
     <!-- main section -->
@@ -30,8 +29,7 @@ function showNoticias()
     require_once "templates/footer.php";
 }
 
-function showNoticiaById($id)
-{
+function showNoticiaById($id) {
     require_once "templates/header.php";
     // utiliza el arreglo $_GET para tomar el parametro que viene desde la url (noticias.php?id=<int>)
     // faltarìa agregar una verificación para controlar si existe la noticia
@@ -48,8 +46,7 @@ function showNoticiaById($id)
     require_once "templates/footer.php";
 }
 
-function showStaff()
-{
+function showStaff() {
     require_once 'templates/header.php';
 ?>
     <!-- main section -->
@@ -77,8 +74,7 @@ function showStaff()
     require_once 'templates/footer.php';
 }
 
-function showStaffById($id)
-{
+function showStaffById($id) {
     require_once 'templates/header.php';
     $staff = getStaffById($id);
 ?>
