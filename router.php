@@ -1,5 +1,6 @@
 <?php
 require_once "noticias.php";
+require_once 'staff.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -7,7 +8,7 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
 //    TABLA DE RUTEO
 //    Action        Funcion
 //    home          showNoticias()
-//    noticia/:id   showNoticia($id) 
+//    noticia/:id   showNoticia($id)
 //    about         showAbout()
 //    about/:dev    showAbout($dev)
 
