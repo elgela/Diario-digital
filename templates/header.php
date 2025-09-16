@@ -12,7 +12,7 @@ $fecha = new DateTime();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <base href="<?php echo BASE_URL ?>">
     <meta charset="UTF-8">
