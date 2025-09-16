@@ -41,7 +41,7 @@ $fecha = new DateTime();
                     <a class="nav-link" aria-current="page" href="about">Nosotros</a>
                   </li>
                   <li class="nav-item">
-                    <a href="staff" class="nav-link">Staff</a>
+                    <a class="nav-link" aria-current="page" href="staff">Staff</a>
                   </li>
                 </ul>
               </div>
