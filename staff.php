@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // arreglo asociativo para el staff
 $staff = [
@@ -12,46 +12,47 @@ if (isset($_GET['name'])) {
   $staffName = $_GET['name'];
 }
 
+function showStaff() {
+  require_once 'templates/header.php';
 ?>
+  <!-- main section -->
+  <main class="container mt-5">
+    <section class="staff">
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>TUDAI - Diario Digital</title>
-</head>
-<body>
+      <h1>Staff del diario</h1>
 
-    <!-- main header -->
-    <?php require_once './templates/header.php'; ?>
+      <ul>
+        <li><a href="staff.php?name=marcelo">Marcelo Gelato</a></li>
+        <li><a href="staff.php?name=abby">Abby</a></li>
+        <li><a href="staff.php?name=luli">Luli</a></li>
+      </ul>
 
-    <!-- main section -->
-    <main class="container mt-5">
-      <section class="staff">
+      <?php if (!empty($staffName)) { ?>
+        <div>
+          <h2><?= $staff[$staffName] ?></h2>
+          <h3>Rol: Director</h3>
+        </div>
+      <?php  } ?>
 
-        <h1>Staff del diario</h1>
+    </section>
+  </main>
+<?php
+  require_once 'templates/footer.php';
+}
 
-        <ul>
-          <li><a href="staff.php?name=marcelo">Marcelo Gelato</a> </li>
-          <li><a href="staff.php?name=abby">Abby</a></li>
-          <li><a href="staff.php?name=luli">Luli</a></li>
-        </ul>
+function showStaffById($id) {
+  require_once 'templates/header.php';
+  $staff = getStaffById($id);
+?>
+  <main class="container mt-5">
+    <section class="staff">
+      <h1 class="mb-5"><?php  ?></h1>
+    </section>
+  </main>
+<?php
+  require_once 'templates/footer.php';
+}
 
-        <?php if (!empty($staffName)) { ?>
-          <div>
-            <h2><?= $staff[$staffName] ?></h2>
-            <h3>Rol: Director</h3>
-          </div>
-        <?php  } ?>
+function getStaffById($id) {
 
-      </section>
-    </main>
-    
-    <!-- main footer -->
-     <?php require_once './templates/footer.php'; ?>
-  </body>
-</html>
+}
